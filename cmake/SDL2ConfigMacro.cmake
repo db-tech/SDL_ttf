@@ -1,0 +1,11 @@
+find_package(SDL2 MODULE REQUIRED)
+
+add_library(SDL2::SDL2 UNKNOWN IMPORTED)
+add_library(SDL2::SDL2main INTERFACE IMPORTED)
+
+set_target_properties(
+        SDL2::SDL2
+        PROPERTIES
+        INTERFACE_INCLUDE_DIRECTORIES "${SDL2_INCLUDE_DIR}"
+        IMPORTED_LOCATION ${SDL2_LIBRARY}
+)
