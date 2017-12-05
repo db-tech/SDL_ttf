@@ -1,4 +1,4 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+cmake_minimum_required(VERSION 3.0)
 
 option(HUNTER_ENABLED "Enable Hunter package manager" NO)
 include("cmake/Hunter/HunterGate.cmake")
@@ -7,7 +7,7 @@ HunterGate(
         SHA1 "244a13718ea2e6c0c8998d15559c7e459f615708"
 )
 
-PROJECT(SDL_ttf VERSION 2.0.14)
+project(SDL_ttf VERSION 2.0.14)
 
 hunter_add_package(freetype)
 find_package(freetype CONFIG REQUIRED)
@@ -57,9 +57,6 @@ install(
         FILES
         "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
         "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
-        "cmake/freetypeConfigMacro.cmake"
-        "cmake/SDL2ConfigMacro.cmake"
-        "cmake/FindSDL2.cmake"
         DESTINATION
         "lib/cmake/${PROJECT_NAME}")
 
