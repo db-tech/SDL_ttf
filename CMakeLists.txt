@@ -42,16 +42,17 @@ configure_package_config_file(
         INSTALL_DESTINATION "lib/cmake/${PROJECT_NAME}"
 )
 
-install(TARGETS ${PROJECT_NAME} EXPORT "${PROJECT_NAME}Targets"
+install(TARGETS ${PROJECT_NAME} EXPORT 
+        "${PROJECT_NAME}Targets"
         LIBRARY DESTINATION "lib"
         ARCHIVE DESTINATION "lib"
-        INCLUDES DESTINATION "include")
+        INCLUDES DESTINATION "include" "include/SDL_ttf")
 
 install(
         FILES
         "SDL_ttf.h"
         DESTINATION
-        "include/SDL2_ttf")
+        "include/SDL_ttf")
 
 install(
         FILES
