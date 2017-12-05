@@ -27,7 +27,7 @@ set(SRC_FILES ${SRC_C_FILES} ${SRC_H_FILES})
 
 add_library(${PROJECT_NAME} ${SRC_FILES})
 
-target_link_libraries(${PROJECT_NAME} freetype::freetype SDL2::SDL2 SDL2::SDL2main)
+target_link_libraries(${PROJECT_NAME} PUBLIC freetype::freetype SDL2::SDL2 SDL2::SDL2main)
 
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
@@ -46,7 +46,7 @@ install(TARGETS ${PROJECT_NAME} EXPORT
         "${PROJECT_NAME}Targets"
         LIBRARY DESTINATION "lib"
         ARCHIVE DESTINATION "lib"
-        INCLUDES DESTINATION "include" "include/SDL_ttf")
+        INCLUDES DESTINATION "include")
 
 install(
         FILES
